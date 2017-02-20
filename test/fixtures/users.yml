@@ -1,1 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+cesar:
+  name: Cesar Brazon
+  ci: 23736258
+  email: cesarbrazon10@gmail.com
+  password_digest: <%= User.digest('password') %>
