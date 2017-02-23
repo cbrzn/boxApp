@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170223043432) do
+ActiveRecord::Schema.define(version: 20170223203839) do
+
+  create_table "trainings", force: :cascade do |t|
+    t.integer  "cantidad"
+    t.text     "hora"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hora"], name: "index_trainings_on_hora"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
