@@ -1,0 +1,10 @@
+<h1>Ludus App</h1>
+
+<p>Hola <%= @user.name %>,</p>
+
+<p>
+Bienvenid@ a Ludus App! Haz click en el enlace que esta abajo para activar tu cuenta:
+</p>
+
+<%= link_to "Activar", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
