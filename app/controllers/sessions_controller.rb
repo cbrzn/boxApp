@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_back_or user
     else
-      message = "Cuenta no activada"
+      message = "Cuenta no activada. "
       message += "Revisa tu correo para el enlace de activacion"
       flash[:warning] = message
       redirect_to root_url
