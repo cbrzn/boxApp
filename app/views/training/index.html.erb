@@ -1,0 +1,13 @@
+<% provide(:title, 'Horario') %>
+<h1>Clases del dia:</h1>
+
+<ul class="trainings">
+  <% @trainings.each do |training| %>
+    <li>
+      <%= "Horas: " %>
+      <%= link_to training.hora, training %> </li> <li>
+      <%= "Cupos disponibles: " %>
+      <%= link_to training.cantidad, training, size: 24 %>
+    </li>
+  <% end %>
+</ul>
