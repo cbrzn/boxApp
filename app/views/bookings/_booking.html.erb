@@ -1,0 +1,7 @@
+<li id="booking<%= booking.id %>">
+  <span class="user"><%= link_to booking.user.ci, booking.user %></span>
+  <span class="training"><%= link_to booking.training.hora, booking.training %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(booking.created_at) %> ago.
+  </span>
+</li>
