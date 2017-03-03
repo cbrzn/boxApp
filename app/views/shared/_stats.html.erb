@@ -1,0 +1,15 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= reserving_user_path(@user) %>">
+    <strong id="reserving" class="stat">
+      <%= @user.reserving %>
+    </strong>
+    Clase reservada
+  </a>
+  <a href="<%= reservers_training_path(@training) %>">
+    <strong id="reservers" class="stat">
+      <%= @training.reservers %>
+    </strong>
+    Reservado por
+  </a>
+</div>

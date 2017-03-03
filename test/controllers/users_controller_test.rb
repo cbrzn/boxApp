@@ -6,10 +6,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     end
 
-    
+
   def setup
     @user = users(:cesar)
     @other_user = users(:archer)
+    @training = trainings(:one)
     end
 
   test "should redirect edit when logged in as wrong user" do
@@ -48,5 +49,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
+
 
 end

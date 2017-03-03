@@ -1,4 +1,14 @@
 <% provide(:title, 'Perfil de usuario | Ludus app') %>
 
-<%= @user.name %>
-<%= @user.ci %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        Nombre: <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <h1>
+      Cedula:  <%= @user.ci %>
+      </h1>
+    </section>

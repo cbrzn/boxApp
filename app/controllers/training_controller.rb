@@ -8,4 +8,6 @@ class TrainingController < ApplicationController
     @trainings = Training.all
   end
 
+
+
 end

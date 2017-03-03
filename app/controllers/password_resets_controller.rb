@@ -11,7 +11,8 @@ class PasswordResetsController < ApplicationController
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
-      flash[:info] = "Correo enviado con instrucciones para reiniciar contrasena"
+      flash[:info] = "Correo enviado con instrucciones para reiniciar contrasena.
+                      Si no te llega revisa tu carpeta de spam"
       redirect_to root_url
     else
       flash.now[:danger] = "Correo no encontrando"

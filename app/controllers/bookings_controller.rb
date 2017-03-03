@@ -1,30 +1,17 @@
 class BookingsController < ApplicationController
 
 
-  def new
-    @training = Training.find(params[:Training_id])
-    @booking = @training.bookings.new(booking_params)
-    @booking.user = current_user
-  end
-
-
   def create
-      @training = Training.find(params[:Training_id])
-      @booking = @training.bookings.new(booking_params)
-      @booking.user = current_user
-      if @booking.save
-            flash[:success] = "Your place on our event has been booked"
-            redirect_to training_path(@training)
-        else
-            flash[:error] = "Payment unsuccessful"
-            render "new"
-      end
-
-
+      training = Training.find(params[:booker_id])
+      current_user.book(training)
+      flash[:success] = "Reservacion realizada"
+      redirect_to training_index_url
   end
 
-  private
-  def booking_params
-    params.require(:booking).permit(:Training_id, :User_id)
+  def destroy
+      training = Booking.find(params[:id]).booked
+      current_user.unbook(training)
+      flash[:success] = "Reservacion eliminada"
+      redirect_to training_index_url
   end
 end
