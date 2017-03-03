@@ -1,6 +1,5 @@
 <% provide(:title, 'Clase | Ludus app') %>
 <div class="row">
-  <aside class="col-md-4">
     <section>
       <h1>
 HORA: <%= @training.hora %>
@@ -13,4 +12,3 @@ CUPOS: <%= @training.cantidad %>
     </section>
 
         <%= render 'book_form' if logged_in? %>
-      
