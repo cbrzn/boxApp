@@ -6,5 +6,5 @@
     <%= form_for ([@training, @booking]) do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :training_id, value: "" %>
-      <%= f.submit "Confirm book", class: "btn btn-primary" %>
+      <%= f.submit "Confirmar reservacion", class: "btn btn-primary" %>
     <% end %>
