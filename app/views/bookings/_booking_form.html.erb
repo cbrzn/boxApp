@@ -2,6 +2,6 @@
       <% if current_user.bookings(@training) %>
         <%= link_to "Reservar", new_training_booking_path(@training), class: "btn btn-primary" %>
       <% else %>
-        <%= link_to "Eliminar reserva", unbook_path, method: "delete", class: "btn btn-primary" %>
+        <%= link_to "Eliminar reserva", delete_training_booking_path(@training), method: "delete", class: "btn btn-primary" %>
     <% end %>
 <% end %>

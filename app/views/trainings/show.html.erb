@@ -10,7 +10,8 @@ HORA: <%= @training.hora %>
 CUPOS: <%= @training.cantidad %>
       </h1>
     </section>
+
     <center>
     <%= render 'bookings/booking_form' if logged_in? %>
-    <%= render 'bookings/show_bookings' if logged_in? %>
+    <%= render 'bookings/index_bookings' if logged_in? %>
   </center>

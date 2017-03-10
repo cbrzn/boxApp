@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 
 
   def index
-    @booking = Booking.all
+    @bookings = Booking.where(training_id: params[:training_id])
   end
 
 
