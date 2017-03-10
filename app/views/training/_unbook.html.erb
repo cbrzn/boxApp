@@ -1,4 +1,0 @@
-<%= form_for(current_user.active_bookings.find_by(booked_id: @training.id),
-             html: { method: :delete }) do |f| %>
-  <%= f.submit "Eliminar reserva", class: "btn" %>
-<% end %>

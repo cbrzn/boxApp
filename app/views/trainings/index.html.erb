@@ -4,7 +4,7 @@
 <ul class="trainings">
   <% @trainings.each do |training| %>
   <li>
-    <%= link_to training.hora, training %>
+    <%= link_to training.hora, training_path(training) %>
   </li>
   <% end %>
 </ul>

@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302220001) do
+ActiveRecord::Schema.define(version: 20170307220723) do
 
   create_table "bookings", force: :cascade do |t|
-    t.integer  "booker_id"
-    t.integer  "booked_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["booked_id"], name: "index_bookings_on_booked_id"
-    t.index ["booker_id", "booked_id"], name: "index_bookings_on_booker_id_and_booked_id", unique: true
-    t.index ["booker_id"], name: "index_bookings_on_booker_id"
+    t.integer  "user_id"
+    t.integer  "training_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["training_id"], name: "index_bookings_on_training_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "trainings", force: :cascade do |t|

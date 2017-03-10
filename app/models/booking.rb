@@ -1,6 +1,10 @@
 class Booking < ApplicationRecord
-  belongs_to  :booker,    class_name: "User"
-  belongs_to  :booked,    class_name: "Training"
-  validates :booker_id,   presence: true
-  validates :booked_id,   presence: true
+  belongs_to :user
+  belongs_to :training
+  default_scope -> { order(created_at: :desc) }
+  validates :user_id, presence: true
+  validates :training_id, presence: true
+
+
+
 end

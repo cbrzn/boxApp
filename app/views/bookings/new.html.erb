@@ -1,7 +1,10 @@
-<% provide(:title, 'Reserva | Ludus app') %>
-<h1>Reserva de clases</h1>
+<% provide(:title, 'Reservacion | Ludus app') %>
+<h1>Confirmacion de reserva</h1>
 
-<p>Elige la clase que quieras reservar: </p>
-
-
-<p>class   <%= @booking. %></p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for ([@training, @booking]) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :training_id, value: "" %>
+      <%= f.submit "Confirm book", class: "btn btn-primary" %>
+    <% end %>

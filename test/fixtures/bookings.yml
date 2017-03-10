@@ -1,1 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created_at: <%= 10.minutes.ago %>
+
+two:
+  created_at: <%= 20.minutes.ago %>
+
+three:
+  created_at: <%= 30.minutes.ago %>
