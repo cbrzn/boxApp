@@ -1,0 +1,10 @@
+<% provide(:title, 'Reservacion | Ludus app') %>
+<h1>Eliminacion de reserva</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for ([@training, @booking]) do |f| %>
+      <%= f.hidden_field :booking_id, value: "" %>
+      <%= f.hidden_field :training_id, value: "" %>
+      <%= f.submit "Eliminar reservacion", class: "btn btn-primary" %>
+    <% end %>

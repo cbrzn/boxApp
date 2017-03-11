@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   get    '/login',                to: 'sessions#new'
   post   '/login',                to: 'sessions#create'
   delete '/logout',               to: 'sessions#destroy'
-  get    '/book',                 to: 'bookings#new'
-  post   '/book',                 to: 'bookings#create'
-  delete '/unbook',               to: 'bookings#destroy'
 
 
   resources :account_activations, only: [:edit]

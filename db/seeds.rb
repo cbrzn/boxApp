@@ -24,3 +24,34 @@ training_hours =  [
 training_hours.each do |hora, cantidad|
 Training.create!( hora: hora, cantidad: cantidad)
 end
+
+
+bookedUsers = [
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           [1, 1],
+           ]
+bookedUsers.each do |user_id, training_id|
+  Booking.create!(user_id: user_id,training_id: training_id)
+end

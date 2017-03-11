@@ -1,6 +1,5 @@
 <ul class="bookings">
 <% if current_user.bookings(@training_id) %>
-
 <%= link_to "Usuarios reservados", training_bookings_path(@training), class: "btn btn-primary"  %>
 
 <% end %>
