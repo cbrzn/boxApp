@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
 private
 
   def training_not_full?
-  errors.add(:training, "La clase esta llena") unless training.can_book?
+    errors.add(:training, "La clase esta llena") unless training.can_book?
   end
 
 end

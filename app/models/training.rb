@@ -6,4 +6,7 @@ class Training < ApplicationRecord
     bookings.count < cantidad
   end
 
+  def left_slots
+    cantidad - bookings.count
   end
+end
