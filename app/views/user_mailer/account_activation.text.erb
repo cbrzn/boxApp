@@ -1,5 +1,5 @@
 Hola <%= @user.name %>,
 
-Bienvenid@ a Ludus App! Haz click en el enlace que esta abajo para activar tu cuenta:
+Bienvenid@ a Box App! Haz click en el enlace que esta abajo para activar tu cuenta:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

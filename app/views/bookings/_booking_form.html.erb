@@ -2,11 +2,11 @@
 <% unless current_user?(@user) %>
       <% if current_user.not_booked?(@training) %>
       <%= link_to "Reservar", new_training_booking_path(@training), class: "btn btn-primary" %>
-      <% else %>
-        <% @bookings.each do |booking| %>
-    <%= link_to "Eliminar reservacion", training_booking_path(booking.training, booking),
-        method: :delete, data: { confirm: 'Segur@ que quiere eliminar el cupo?' },
-        class: "btn btn-primary" %>
-    <% end %>
+        <% else %>
+      <% @bookings.each do |booking| %>
+  <%= link_to "Eliminar reservacion", training_booking_path(booking.training, booking),
+      method: :delete, data: { confirm: 'Segur@ que quiere eliminar el cupo?' },
+      class: "btn btn-primary" %>
+  <% end %>
     <% end %>
 <% end %>
