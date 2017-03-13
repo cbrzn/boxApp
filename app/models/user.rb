@@ -17,9 +17,8 @@ class User < ApplicationRecord
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-    def not_booked?(booked)
-      booked = self.bookings(@training)
-      booked = true
+    def not_booked?(training)
+      bookings.include?(training)
     end
 
     def self.digest(string)

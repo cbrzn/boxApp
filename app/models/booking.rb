@@ -6,10 +6,11 @@ class Booking < ApplicationRecord
   validate :training_not_full?, on: :create
 
 
+
 private
 
   def training_not_full?
-    errors.add(:training, "La clase esta llena") unless training.can_book?
+    errors.add(:base, :full, message: "Clase llena. Trate otra hora") unless training.can_book?
   end
 
 end

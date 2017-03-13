@@ -3,8 +3,15 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for ([@training, @booking]) do |f| %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.hidden_field :training_id, value: "" %>
-      <%= f.submit "Confirmar reservacion", class: "btn btn-primary" %>
+  <%= form_for ([@training, @booking]) do |f| %>
+    <% if f.object.errors.any? %>
+      <% f.object.errors.full_messages.each do |full_message| %>
+        <p>
+          <%= full_message %>
+        </p>
+      <% end %>
     <% end %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :training_id, value: "" %>
+    <%= f.submit "Confirmar reservacion", class: "btn btn-primary" %>
+  <% end %>
