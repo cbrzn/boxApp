@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "Ludus app"
+    @base_title = "Box app"
   end
 
   test "should get home" do

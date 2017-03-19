@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
 
 
   def destroy
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find_by(params[:id])
     @booking.destroy
     flash[:success] = "Reservacion eliminada"
     redirect_to trainings_path

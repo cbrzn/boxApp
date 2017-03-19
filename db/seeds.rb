@@ -1,8 +1,9 @@
-User.create!(name: "Cesar",
-            ci: 12312312,
-            email: "holacomo@estas.com",
+User.create!(name: "Cesar Brazon",
+            ci: 23736258,
+            email: "cesarbrazon10@gmail.com",
             password: 'foobar',
-            password_confirmation: 'foobar')
+            password_confirmation: 'foobar',
+            admin: true)
 
 training_hours =  [
                   [ "7:00am - Clase",   24],
