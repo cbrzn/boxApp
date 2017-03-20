@@ -19,20 +19,17 @@ class BookingsController < ApplicationController
     end
   end
 
-
   def index
     @bookings = Booking.where(training_id: params[:training_id])
   end
 
 
   def destroy
-    @booking = Booking.find_by(params[:id])
+    @booking = Booking.find(params[:id])
     @booking.destroy
     flash[:success] = "Reservacion eliminada"
     redirect_to trainings_path
   end
-
-
 
 private
   def booking_params
@@ -42,5 +39,4 @@ private
   def load_training
     @training = Training.find(params[:training_id])
   end
-
 end

@@ -4,7 +4,8 @@
     <%= link_to "Reservar", new_training_booking_path(@training),
         class: "btn btn-primary" %>
   <% else %>
-    <%= link_to "Eliminar reservacion", training_booking_path(@training),
+    <%= link_to "Eliminar reservacion",
+        training_booking_path(@training, @training.bookings.where(user: current_user).first),
         method: :delete, data:{ confirm: 'Segur@ que quiere eliminar el cupo?' },
         class: "btn btn-primary" %>
     <% end %>
