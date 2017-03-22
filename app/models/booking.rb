@@ -5,10 +5,9 @@ class Booking < ApplicationRecord
   validates :training_id, presence: true
   validate :training_not_full?, on: :create
 
-  def reset_bookings(h)
-    h = Time.now
+  def reset_bookings
     @bookings = Booking.all
-    if h.hour == 23
+    if Time.now.hour == 23
       @bookings.delete_all
     end
   end
@@ -18,7 +17,9 @@ class Booking < ApplicationRecord
 private
 
   def training_not_full?
-    errors.add(:base, :full, message: "Clase llena. Trate otra hora") unless training.can_book?
+    errors.add(:base, :full, message: "Clase llena. Trate otra hora")
+    unless
+      training.can_book?
   end
 
 end
