@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
   def reset_bookings(h)
     h = Time.now
     @bookings = Booking.all
-    if h.hour == 22
+    if h.hour == 23
       @bookings.delete_all
     end
   end
