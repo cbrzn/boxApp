@@ -5,13 +5,6 @@ class Booking < ApplicationRecord
   validates :training_id, presence: true
   validate :training_not_full?, on: :create
 
-  def reset_bookings
-    @bookings = Booking.all
-    if Time.zone.now.hour == 12
-      @bookings.delete_all
-    end
-  end
-
 
 
 private
