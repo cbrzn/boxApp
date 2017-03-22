@@ -17,9 +17,7 @@ class Booking < ApplicationRecord
 private
 
   def training_not_full?
-    errors.add(:base, :full, message: "Clase llena. Trate otra hora")
-    unless
-      training.can_book?
+    errors.add(:base, :full, message: "Clase llena. Trate otra hora") unless training.can_book?
   end
 
 end
