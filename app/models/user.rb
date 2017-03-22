@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
     def not_booked?(training)
       bookings.where(training: training).none?
-    end
+    end    
 
     def self.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
