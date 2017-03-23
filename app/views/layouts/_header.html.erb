@@ -4,6 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
+        <li><%= link_to "Inicio", root_path %></li>
         <li><%= link_to "Horas de clases", trainings_path %></li>
         <% if current_user.admin? %>
         <li><%= link_to "Lista de usuarios", users_path %></li>
