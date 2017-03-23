@@ -1,4 +1,6 @@
+<ul class="bookings">
 <% @trainings.each do |training| %>
-  <%= link_to training.id , training_bookings_path(training), class: "btn btn-primary"  %>
-  <% end %>
+<%= link_to training.id, training_bookings_path(training), class: "btn btn-primary"  %>
+
+<% end %>
 </ul>
