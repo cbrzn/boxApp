@@ -32,8 +32,8 @@ admin_users= [
               ]
 
 admin_users.each do |name, ci, email, password, password_confirmation, admin|
-User.create!(name: name, ci: ci, email: email,
-             password: password, password_confirmation: password_confirmation)
+User.create!(name: name, ci: ci, email: email, password: password,
+             password_confirmation: password_confirmation, admin: admin)
            end
 
 training_hours =  [
