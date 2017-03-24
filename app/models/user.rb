@@ -18,8 +18,8 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
     def not_booked?(training)
-      bookings.where(training: training).none?
-    end    
+      bookings.where(training: training).any?
+    end
 
     def self.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
