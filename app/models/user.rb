@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   has_many :trainings, through: :bookings
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
 
 
