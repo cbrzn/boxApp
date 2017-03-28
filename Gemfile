@@ -13,6 +13,7 @@ gem 'rails-controller-testing'
 gem 'bcrypt', '3.1.11'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'newrelic_rpm'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
