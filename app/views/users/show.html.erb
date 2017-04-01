@@ -11,3 +11,12 @@
       Cedula:  <%= @user.ci %>
       </h1>
     </section>
+
+    <% if current_user.admin? %>
+    <h1>
+    Correo:  <%= @user.email %>
+    </h1>
+    <h1>
+    Admin:  <%= @user.admin %>
+    </h1>
+    <% end %>
