@@ -6,6 +6,9 @@ class Booking < ApplicationRecord
   validate :training_not_full?, on: :create
 
 
+  def self.today
+    where("created_at >= ?", Time.zone.today)
+  end
 
 private
 
