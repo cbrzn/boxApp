@@ -5,7 +5,7 @@ class RmsController < ApplicationController
   def new
     @rm = Rm.new
     @user = User.find(params[:user_id])
-    @rm.user_id
+
   end
 
   def create

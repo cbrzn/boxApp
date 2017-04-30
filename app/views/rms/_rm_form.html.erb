@@ -2,9 +2,6 @@
 
   <div class="col-md-12 col-md-offset-3">
 <%= form_for([@user, @rm]) do |f| %>
-<%= f.label :quantity, "Peso levantado" %>
-<%= f.number_field :quantity %>
-
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.select :content, ['Back squat', 'Front squat', 'Deadlift',
                           'Sumo Deadlift', 'Sumo Deadlift High Pull',
@@ -16,6 +13,8 @@
 
 
 
+  <%= f.label :quantity, "Peso levantado" %>
+  <%= f.number_field :quantity %>
 
   <%= f.hidden_field :user_id, value: current_user.id %>
 
