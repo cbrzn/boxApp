@@ -2,6 +2,7 @@ class CreateRms < ActiveRecord::Migration[5.0]
   def change
     create_table :rms do |t|
       t.text :content
+      t.integer :quantity
       t.references :user, foreign_key: true
 
       t.timestamps
