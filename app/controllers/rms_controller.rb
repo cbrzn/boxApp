@@ -32,7 +32,7 @@ class RmsController < ApplicationController
 
   private
     def rms_params
-      params.require(:rm).permit(:user_id, :content, :quantity, :max)
+      params.require(:rm).permit(:user_id, :content, :quantity)
     end
 
     def load_user
