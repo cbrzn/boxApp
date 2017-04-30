@@ -14,7 +14,7 @@
 
 
   <%= f.label :quantity, "Peso levantado" %>
-  <%= f.text_field :quantity, class: 'form-control' %>
+  <%= f.number_field :quantity, class: 'form-control' %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%= f.submit "Crear", class: "btn btn-primary" %>
