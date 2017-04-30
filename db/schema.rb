@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20170430074956) do
     t.integer  "training_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.boolean  "deleted",     default: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_bookings_on_deleted_at"
     t.index ["training_id"], name: "index_bookings_on_training_id"
