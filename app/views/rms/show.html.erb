@@ -1,0 +1,13 @@
+<% provide(:title, 'Repeticiones maximas | Box app') %>
+<h1> Repeticiones maximas:
+ </h1>
+
+<ul class="rms">
+  <% @rms.each do |rm| %>
+  <li>
+    <%= p rm.content %>
+    <%= p  rm.quantity %>
+    <%= p rm.max %>
+  </li>
+  <% end %>
+</ul>

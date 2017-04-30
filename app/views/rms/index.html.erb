@@ -1,0 +1,23 @@
+<% provide(:title, 'Repeticiones maximas | Box app') %>
+<h1> Repeticiones maximas </h1>
+
+<ul class="rms">
+
+  <% @rms.each do |rm| %>
+  <li>
+    <%= p rm.content %>
+    <%= p '-' %>
+    <%= p rm.quantity  %>
+    <%= p 'libras' %>
+    <% if current_user.rms == @rms %>
+      | <%= link_to "eliminar", user_rm_path(rm.user, rm), :method => :delete,
+                          data: { confirm: "Estas seguro?" } %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+<% if current_user.rms == @rms %>
+<div class="center">
+<%= link_to "Crear nueva repeticion maxima", new_user_rm_path(current_user),
+    class: "btn btn-primary" %>
+    <% end %>

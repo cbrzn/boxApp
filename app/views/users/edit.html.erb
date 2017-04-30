@@ -7,10 +7,12 @@
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
+      <% if current_user.admin? %>
       <%= f.label :name, "Nombre y Apellido:" %>
       <%= f.text_field :name, class: 'form-control' %>
+      <% end %>
 
-      <%= f.label :email, "Correo electronica:" %>
+      <%= f.label :email, "Correo electronico:" %>
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password, "Contrasena:" %>

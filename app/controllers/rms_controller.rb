@@ -1,0 +1,41 @@
+class RmsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :load_user, only: [:create, :destroy]
+
+  def new
+    @rm = Rm.new
+    @user = User.find(params[:user_id])
+    @rm.user_id
+  end
+
+  def create
+    @rm = @user.rms.build(rms_params)
+    if @rm.save
+      flash[:success] = "Repeticion maxima creada"
+      redirect_to user_rms_path
+    else
+      render 'new'
+    end
+  end
+
+  def index
+    @rms = Rm.where(user_id: params[:user_id])
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    Rm.find(params[:id]).destroy
+    flash[:success] = "Repeticion maxima eliminada"
+    redirect_to user_rms_path
+  end
+
+
+  private
+    def rms_params
+      params.require(:rm).permit(:user_id, :content, :quantity, :max)
+    end
+
+    def load_user
+      @user = User.find(params[:user_id])
+    end
+  end

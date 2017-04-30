@@ -10,15 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323200800) do
+ActiveRecord::Schema.define(version: 20170430074956) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "training_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "deleted",     default: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_bookings_on_deleted_at"
     t.index ["training_id"], name: "index_bookings_on_training_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "ci"
+    t.integer  "training_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["training_id"], name: "index_guests_on_training_id"
+    t.index ["user_id", "created_at"], name: "index_guests_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_guests_on_user_id"
+  end
+
+  create_table "rms", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "quantity"
+    t.integer  "max"
+    t.index ["user_id", "created_at"], name: "index_rms_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_rms_on_user_id"
   end
 
   create_table "trainings", force: :cascade do |t|

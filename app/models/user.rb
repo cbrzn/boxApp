@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-
   has_many :trainings, through: :bookings
   has_many :bookings, dependent: :destroy
+  has_many :rms, dependent: :destroy
+  has_many :guests, dependent: :destroy
+
 
 
 
@@ -17,9 +19,6 @@ class User < ApplicationRecord
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-    def not_booked?(training)
-      bookings.where(training: training).any?
-    end
 
     def self.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

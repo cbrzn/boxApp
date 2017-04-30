@@ -1,4 +1,5 @@
 class Training < ApplicationRecord
+  has_many :guests
   has_many :users, through: :bookings
   has_many :bookings
 

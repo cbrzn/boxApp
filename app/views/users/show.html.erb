@@ -12,6 +12,8 @@
       </h1>
     </section>
 
+
+
     <% if current_user.admin? %>
     <h1>
     Correo:  <%= @user.email %>
@@ -20,3 +22,6 @@
     Admin:  <%= @user.admin %>
     </h1>
     <% end %>
+
+    <div class="center">
+    <%= link_to "Repeticiones maximas", user_rms_path(@user), class: "btn btn-primary" %>
