@@ -13,8 +13,7 @@
 
 
 
-  <%= f.label :quantity, "Peso levantado" %>
-  <%= f.number_field :quantity %>
+  <%= f.text_area :quantity, placeholder: "Peso alcanzado" %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%= f.submit "Crear", class: "btn btn-primary" %>
