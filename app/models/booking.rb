@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   validates :user_id, presence: true
   validates :training_id, presence: true
   validate :training_not_full?, on: :create
+  acts_as_paranoid
 
 
   def self.today
