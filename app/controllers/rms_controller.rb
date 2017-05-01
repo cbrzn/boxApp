@@ -11,7 +11,7 @@ class RmsController < ApplicationController
   def create
     @rm = @user.rms.build(rms_params)
     if @rm.save
-      flash[:success] = "Repeticion maxima creada"
+      flash[:success] = "RM creado"
       redirect_to user_rms_path
     else
       render 'new'
@@ -25,7 +25,7 @@ class RmsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     Rm.find(params[:id]).destroy
-    flash[:success] = "Repeticion maxima eliminada"
+    flash[:success] = "RM eliminado"
     redirect_to user_rms_path
   end
 
