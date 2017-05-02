@@ -1,7 +1,6 @@
 class Guest < ApplicationRecord
   belongs_to :training
   belongs_to :user
-  belongs_to :invitations
   validates :ci, presence: true, uniqueness: true
   validates :user_id, presence: true
   validates :training_id, presence: true
