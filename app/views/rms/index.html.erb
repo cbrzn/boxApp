@@ -1,4 +1,4 @@
-<% provide(:title, 'RM| Box app') %>
+<% provide(:title, 'RM | Box app') %>
 <h1> RM </h1>
 
 <ul class="rms">
@@ -10,7 +10,7 @@
     <%= p rm.quantity  %>
     <%= p 'libras' %>
     <% if current_user.rms == @rms %>
-      | <%= link_to "eliminar", user_rm_path(rm.user, rm), :method => :delete,
+    | <%= link_to "eliminar", user_rm_path(rm.user, rm), :method => :delete,
                           data: { confirm: "Estas seguro?" } %>
     <% end %>
   </li>

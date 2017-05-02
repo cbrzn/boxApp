@@ -7,11 +7,14 @@ HORA: <%= @training.hora %>
     </section>
     <section>
       <h1>
-CUPOS: <%= @training.left_slots %>
+CUPOS: <%= @training.left_slots %> |
+CUPOS PARA INVITADOS: <%= @training.left_guestslot %>
       </h1>
     </section>
 
+
     <center>
-    <%= render 'bookings/booking_form' if logged_in? %>
+    <%= render 'shared/booking_form' if logged_in? %>
     <%= render 'bookings/index_bookings' if logged_in? %>
+    <%= render 'guests/guest_form' if logged_in? %>
     </center>

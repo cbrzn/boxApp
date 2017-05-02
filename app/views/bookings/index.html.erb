@@ -3,9 +3,17 @@
 <ul class="bookings">
   <% @bookings.today.each do |booking| %>
   <li>
-    <span class="user"><%= link_to booking.user.name, booking.user %>
-
-                          </span>
+    <span class="user"><%= link_to booking.user.name, booking.user %></span>
   </li>
   <% end %>
-</ul>
+    <% @guests.today.each do |guest| %>
+    <li>
+    <%=  p guest.name %>
+    <% if current_user?(guest.user) %>
+    | <%= link_to "eliminar", training_guest_path(guest.training, guest), :method => :delete,
+                        data: { confirm: "Estas seguro?" } %>
+                            </span>
+    </li>
+    </ul>
+    <% end %>
+<% end %>

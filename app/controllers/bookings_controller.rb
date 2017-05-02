@@ -20,7 +20,9 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @guests = Guest.where(training_id: params[:training_id])
     @bookings = Booking.where(training_id: params[:training_id])
+    @users = User.where(user_id: params[:user_id])
   end
 
 

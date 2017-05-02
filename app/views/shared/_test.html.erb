@@ -1,1 +1,3 @@
-
+<%= p 'Estas reservado en: ' %>
+<%= p current_user.trainings.collect(&:hora) %>
+<% current_user.bookings %>

@@ -1,7 +1,7 @@
 class Training < ApplicationRecord
-  has_many :guests
   has_many :users, through: :bookings
   has_many :bookings
+  has_many :guests
 
   def can_book?
     bookings.count < cantidad
@@ -10,4 +10,13 @@ class Training < ApplicationRecord
   def left_slots
     cantidad - bookings.count
   end
+
+  def can_invite?
+    guests.count < guestslot
+  end
+
+  def left_guestslot
+    guestslot - guests.count
+  end
+
 end

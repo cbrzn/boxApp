@@ -2,7 +2,9 @@ class User < ApplicationRecord
   has_many :trainings, through: :bookings
   has_many :bookings, dependent: :destroy
   has_many :rms, dependent: :destroy
+  has_many :invitations
   has_many :guests, dependent: :destroy
+  accepts_nested_attributes_for :guests
 
 
 
