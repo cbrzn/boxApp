@@ -9,6 +9,7 @@ class GuestsController < ApplicationController
 
     def create
       @guest = @training.guests.build(guest_params)
+      @guest.user = current_user
       if @guest.save
         flash[:success] = "Invitacion realizada"
         redirect_to trainings_path
