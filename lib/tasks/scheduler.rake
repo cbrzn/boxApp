@@ -13,5 +13,9 @@ task :auto_bookings => :environment do
   Booking.create(user_id: 90, training_id: 7)
   Booking.create(user_id: 55, training_id: 9)
 
+task :reset_guests => :environment do
+  Guest.destroy_all
+end
+
 
 end
