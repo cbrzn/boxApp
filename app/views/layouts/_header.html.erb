@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "Box app", '#', id: "logo" %>
-      <ul class="navbar-nav navbar-right">
+      <ul class="navbar-nav">
         <% if logged_in? %>
         <li><%= link_to "Inicio", root_path %></li>
         <li><%= link_to "Horas de clases", trainings_path %></li>
