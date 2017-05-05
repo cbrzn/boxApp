@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Box app", root_path %>
-    <nav>
+    <%= link_to "Box app", '#', id: "logo" %>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
+        <li><%= link_to "Inicio", root_path %></li>
         <li><%= link_to "Horas de clases", trainings_path %></li>
         <% if current_user.admin? %>
         <li><%= link_to "Lista de usuarios", users_path %></li>
@@ -27,6 +27,5 @@
       <li><%= link_to "Iniciar sesion", login_path %></li>
     <% end %>
   </ul>
-</nav>
 </div>
 </header>
