@@ -13,6 +13,7 @@
     <div class="container">
       <% flash.each do |message_type, message| %>
        <div class="alert alert-<%= message_type %>"><%= message %></div>
+
      <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
@@ -31,5 +32,6 @@
   ga('send', 'pageview');
 
   </script>
+  <meta name="viewport" content="width=device-width                , initial-scale=1.0" />
 
 </html>
