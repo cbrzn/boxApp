@@ -15,7 +15,8 @@ class Guest < ApplicationRecord
 private
 
   def training_not_full?
-    errors.add(:base, :full, message: "No hay mas cupos para invitados") unless training.can_invite?
+    errors.add(:base, :full, message: "No hay mas cupos para invitados")
+    unless training.can_invite?
   end
 
 end
