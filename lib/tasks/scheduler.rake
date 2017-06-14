@@ -9,10 +9,6 @@ task :reset_afternoon_bookings => :environment do
   Booking.where(training_id: array).destroy_all
 end
 
-task :auto_bookings => :environment do
-  Booking.create(user_id: 90, training_id: 7)
-  Booking.create(user_id: 55, training_id: 9)
-
 task :reset_guests => :environment do
   Guest.delete_all
 end
