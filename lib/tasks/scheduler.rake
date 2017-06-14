@@ -12,6 +12,3 @@ end
 task :reset_guests => :environment do
   Guest.delete_all
 end
-
-
-end
