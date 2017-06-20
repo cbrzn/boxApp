@@ -9,6 +9,8 @@ task :reset_afternoon_bookings => :environment do
   Booking.where(training_id: array).destroy_all
 end
 
+
+
 task :reset_guests => :environment do
   Guest.delete_all
 end
