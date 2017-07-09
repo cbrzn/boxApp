@@ -1,7 +1,7 @@
 <% provide(:title, 'Reservados | Box app') %>
 <h1>Usuarios reservados</h1>
 <ul class="bookings">
-  <% @bookings.today.each do |booking| %>
+  <% @bookings.each do |booking| %>
   <li>
     <span class="user"><%= link_to booking.user.name, booking.user %></span>
   </li>
