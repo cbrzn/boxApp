@@ -1,15 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$body-bg: #8A8A8D;
 $font-family-sans-serif: "Ubuntu" ,"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serf;
-$btn-default-color: #FFFFFF;
+$jumbotron-bg: #8A8A8D;
 $brand-primary: #FFFFFF;
+$btn-default-color: #FFFFFF;
 $btn-default-bg: #8A8A8D;
 $btn-primary-bg: #8A8A8D;
 $btn-primary-color: #000000;
 $btn-primary-border: #000000;
 $btn-default-border: #FFFFFF;
-$jumbotron-bg: #8A8A8D;
-$body-bg: #8A8A8D;
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
 @import "bootstrap";
 
 /* Users index */
