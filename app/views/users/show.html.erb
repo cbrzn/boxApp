@@ -1,12 +1,12 @@
 <% provide(:title, 'Perfil de usuario | Box app') %>
+<h4>--------------</h4>
 
 <div class="row">
   <aside class="col-md-4">
     <section>
     <h1><%= @user.name %></h1>
     </section>
-    <h1><%= @user.email %> </h1>
-  </aside>
+ </aside>
     <div class="col-md-8">
         <ol><h3>
       <% if @user.rms.any? %>
