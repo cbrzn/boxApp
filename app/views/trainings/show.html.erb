@@ -4,12 +4,13 @@
 <div class="center">
     <section>
       <h1>
-HORA: <%= @training.hora %> |
+<%= @training.hora %>
       </h1>
     </section>
     <section>
       <h1>
-CUPOS: <%= @training.left_slots %>
+CUPOS: <%= @training.left_slots %> |     CUPOS PARA INVITADOS: <%= @training.left_guestslot %>
+
       </h1>
     </section>
 

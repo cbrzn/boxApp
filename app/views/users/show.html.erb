@@ -16,7 +16,7 @@
           <%= link_to "Agregar RM", new_user_rm_path(current_user), class: "btn btn-default" %>
           <% else %>
           Guarda tus RM!
-        <%= link_to "Crear RM", new_user_rm_path(current_user), class: "btn btn-default" %>
+        <%= link_to "Crear RM", user_rms_path(@user), class: "btn btn-default" %>
   </ol> </h2>
         <%= will_paginate @rms %>
         <% end %>
