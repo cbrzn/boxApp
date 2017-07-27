@@ -1,27 +1,24 @@
 <% provide(:title, 'Perfil de usuario | Box app') %>
 
 <div class="row">
+  <aside class="col-md-4">
     <section>
-      <h1>
-        Nombre: <%= @user.name %>
-      </h1>
+    <h1><%= @user.name %></h1>
     </section>
-    <section>
-      <h1>
-      Cedula:  <%= @user.ci %>
-      </h1>
-    </section>
-
-
-
-    <% if current_user.admin? %>
-    <h1>
-    Correo:  <%= @user.email %>
-    </h1>
-    <h1>
-    Admin:  <%= @user.admin %>
-    </h1>
-    <% end %>
-
-    <div class="center">
-    <%= link_to "RM marcados", user_rms_path(@user), class: "btn btn-primary" %>
+    <h1><%= @user.email %> </h1>
+  </aside>
+    <div class="col-md-8">
+        <ol><h3>
+      <% if @user.rms.any? %>
+      Tienes <%= @user.rms.count %> RM</h3>
+        <h2><class="rms">
+          <%= render @rms %>
+          <%= link_to "Agregar RM", new_user_rm_path(current_user), class: "btn btn-default" %>
+          <% else %>
+          Guarda tus RM!
+        <%= link_to "Crear RM", new_user_rm_path(current_user), class: "btn btn-default" %>
+  </ol> </h2>
+        <%= will_paginate @rms %>
+        <% end %>
+      </div>
+  </div>

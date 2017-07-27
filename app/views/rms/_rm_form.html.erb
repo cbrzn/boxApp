@@ -5,9 +5,10 @@
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.select :content, ['Back squat', 'Front squat', 'Deadlift',
                           'Sumo Deadlift', 'Sumo Deadlift High Pull',
+                          'Squat Snatch',
                           'Power Snatch', 'Power Clean',
                           'Squat Clean', 'Muscle Snatch',
-                          'Clean & Jerk', 'Thruster', 'Push Jerk',
+                          'Thruster', 'Push Jerk',
                           'Split Jerk', 'Press',
                           'Push press', 'Cluster', 'Overhead Squat']%>
 
@@ -18,5 +19,5 @@
 
   <%= f.hidden_field :user_id, value: current_user.id %>
 
-  <%= f.submit "Crear", class: "btn btn-primary" %>
+  <%= f.submit "Crear", class: "btn btn-default" %>
 <% end %>

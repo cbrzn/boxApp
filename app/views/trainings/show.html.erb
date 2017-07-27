@@ -1,20 +1,19 @@
 <% provide(:title, 'Clase | Box app') %>
-<div class="row">
+<div class="center">
     <section>
       <h1>
-HORA: <%= @training.hora %>
+HORA: <%= @training.hora %> |
       </h1>
     </section>
     <section>
       <h1>
-CUPOS: <%= @training.left_slots %> |
-CUPOS PARA INVITADOS: <%= @training.left_guestslot %>
+CUPOS: <%= @training.left_slots %>
       </h1>
     </section>
 
 
-    <center>
+    <h2>
     <%= render 'shared/booking_form' if logged_in? %>
     <%= render 'bookings/index_bookings' if logged_in? %>
     <%= render 'guests/guest_form' if logged_in? %>
-    </center>
+  </h2>

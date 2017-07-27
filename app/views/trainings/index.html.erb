@@ -1,10 +1,9 @@
-<% provide(:title, 'Horas de clase | Box app') %>
-<h1>Horas</h1>
-
-<ul class="trainings">
+<% provide(:title, 'Horas de clases | Box app') %>
+<h1>HORAS DE CLASES</h1>
+<class="trainings">
   <% @trainings.each do |training| %>
-  <li>
-    <%= link_to training.hora, training_path(training) %>
-  </li>
+<h2>
+    <%= link_to training.hora, training_path(training), class: "btn btn-sm btn-default" %>
+  </h2>
   <% end %>
-</ul>
+</class>

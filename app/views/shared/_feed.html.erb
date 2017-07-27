@@ -1,0 +1,6 @@
+<% if @feed_rms.any? %>
+  <ol class="rms">
+    <%= render @feed_rms %>
+  </ol>
+  <%= will_paginate @feed_rms %>
+  <% end %>

@@ -4,12 +4,12 @@
       training_booking_path(@training, @training.bookings.where(user:
       current_user).first),
       method: :delete, data:{ confirm: 'Estas segur@ que deseas cancelar tu reserva?' },
-      class: "btn btn-primary" %>
+      class: "btn btn-default" %>
   <% end %>
   <% if current_user.trainings.any? %>
     <% else %>
       <%= link_to "Reservar", new_training_booking_path(@training,
       @training.bookings.where(user: current_user).first),
-      class: "btn btn-primary" %>
+      class: "btn btn-default" %>
     <% end %>
 <% end %>

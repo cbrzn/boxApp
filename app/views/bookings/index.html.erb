@@ -1,12 +1,13 @@
 <% provide(:title, 'Reservados | Box app') %>
-<h1>Usuarios reservados</h1>
-<ul class="bookings">
+<h1>USUARIOS RESERVADOS</h1>
+<class="bookings">
   <% @bookings.each do |booking| %>
+   <h2>CLASE DE<class="training">  <%= p booking.training.hora %></h2>
   <li>
-    <span class="user"><%= link_to booking.user.name, booking.user %></span>
+    <class="user"><%= link_to booking.user.name, booking.user %></class>
   </li>
   <% end %>
-    <% @guests.today.each do |guest| %>
+    <% @guests.each do |guest| %>
     <li>
     <%=  p guest.name %>
     <% if current_user?(guest.user) %>
@@ -14,6 +15,5 @@
                         data: { confirm: "Estas seguro?" } %>
                             </span>
     </li>
-    </ul>
     <% end %>
 <% end %>

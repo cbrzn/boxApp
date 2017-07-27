@@ -1,35 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$body-bg: #8A8A8D;
+$btn-default-color: #FFFFFF;
+$brand-primary: #FFFFFF;
+$btn-default-bg: #8A8A8D;
+$btn-primary-bg: #8A8A8D;
+$btn-primary-color: #000000;
+$btn-primary-border: #000000;
+$btn-default-border: #FFFFFF;
+$font-family-sans-serif: "Ubuntu" ,"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serf;
+$jumbotron-bg: #8A8A8D;
 @import "bootstrap";
-/* Training index */
-
-/* .training {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
-/* microposts */
-
-.microposts {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-}
 
 /* Users index */
 
@@ -42,25 +22,6 @@
     border-bottom: 1px solid $gray-lighter;
   }
 }
-
-/* miscellaneous  LA MIERDA DE DEBUG */
-
-
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-
 
 
 /* forms */
@@ -83,7 +44,6 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  @include box_sizing;
 }
 
 input {
@@ -137,24 +97,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+  font-size: 2.5em;
   text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #000;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+h3 {
+  text-align: center;
+  font-weight: normal;
 }
 
 /* header */
@@ -180,12 +136,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+  border-top: 1px solid #000000;
+  color: #000;
 }
 
 footer a {
-  color: #555;
+  color: #000;
 }
 
 footer a:hover {
