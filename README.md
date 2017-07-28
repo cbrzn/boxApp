@@ -1,24 +1,4 @@
-# README
+This is an application for bookings in a  Crossfit training.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Made by Cesar Brazon with Ruby on Rails
+cesarbrazon10@gmail.com
