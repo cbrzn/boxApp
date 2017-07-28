@@ -22,6 +22,9 @@ class User < ApplicationRecord
 
 
 
+    def already_booked
+      bookings.count < 1
+    end
 
     def self.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
