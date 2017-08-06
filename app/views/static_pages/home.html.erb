@@ -2,8 +2,12 @@
 
   <% if logged_in? %>
         <% if @feed_items.any? %>
+        <h4>---------------</h4>
+        <h4>---------------</h4>
             <%= render @feed_items %>
           <% else %>
+          <h4>---------------</h4>
+          <h4>---------------</h4>
           <h1> WOD </h1>
           <h2> No hay wod para hoy </h2>
         <% end %>
