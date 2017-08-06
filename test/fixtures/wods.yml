@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  warmup: MyText
+  inbetween: MyText
+  content: MyText
+  user: one
+
+two:
+  warmup: MyText
+  inbetween: MyText
+  content: MyText
+  user: two

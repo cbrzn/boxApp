@@ -1,0 +1,8 @@
+<% provide(:title,'WOD | Box app') %>
+<h4>---------</h4>
+
+<h1> TODOS LOS WOD </h1>
+
+<% @wods.each do |wod| %>
+<%= render wod %>
+<% end %>

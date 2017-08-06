@@ -1,11 +1,19 @@
 <% provide(:title, 'Inicio | Box app') %>
 
-
-<% if logged_in? %>
-<h1>Reserva tu clase ahora!</h1>
-<h2>Pronto mas cosas</h2>
-
-<% else %>
+  <% if logged_in? %>
+        <% if @feed_items.any? %>
+            <%= render @feed_items %>
+          <% else %>
+          <h1> WOD </h1>
+          <h2> No hay wod para hoy </h2>
+        <% end %>
+            <% if current_user.admin? %>
+    <center>
+          <%= link_to "Crear WOD", new_wod_path, class: "btn btn-default" %>
+          <%= link_to "Todos los WOD", wods_path, class: "btn btn-default" %>
+          </center>
+    <% end %>
+  <% else %>
 
 <center>
 <%= link_to image_tag("boxapp4.png", :size => "330x200") %>

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
       @rms = @user.rms.paginate(page: params[:page])
+      @wods = @user.wods.paginate(page: params[:page])
     end
 
     def new
@@ -25,7 +26,6 @@ class UsersController < ApplicationController
     def create
       @user = User.new(user_params)
       if @user.save
-
         flash[:info] = "Cuenta creada satisfactoriamente"
         redirect_to root_url
         else

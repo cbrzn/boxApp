@@ -1,0 +1,37 @@
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+      <% if current_user.admin? %>
+      <%= form_for(@wod) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.text_field :warmup, placeholder: "WARM UP" %>
+        <%= f.text_field :warmupone, placeholder: "EMOM / AMRAP / FT" %>
+        <div class="col-md-6"> <%= f.text_field :warmuptwo,    placeholder: "Ejercicio #1" %> </div>
+        <div class="col-md-6"> <%= f.text_field :warumupthree, placeholder: "Ejercicio #2" %> </div>
+        <div class="col-md-6"> <%= f.text_field :warmupfour,   placeholder: "Ejercicio #3" %> </div>
+        <div class="col-md-6"> <%= f.text_field :warmupfive,   placeholder: "Ejercicio #4" %> </div>
+        <%= f.text_field :inbetween, placeholder: "SKILL / ENDURANCE / STRENGHT" %>
+        <div class="col-md-6"> <%= f.text_field :skillone,   placeholder: "Ejercicio #1" %> </div>
+        <div class="col-md-6"> <%= f.text_field :skilltwo,   placeholder: "Ejercicio #2" %> </div>
+        <div class="col-md-6"> <%= f.text_field :skillthree, placeholder: "Ejercicio #3" %> </div>
+        <div class="col-md-6"> <%= f.text_field :skillfour,  placeholder: "Ejercicio #4" %> </div>
+        <div class="col-md-6"> <%= f.text_field :skillfive,  placeholder: "Ejercicio #5" %> </div>
+        <div class="col-md-6"> <%= f.text_field :skillsix,   placeholder: "Ejercicio #6" %> </div>
+        <%= f.text_field :content, placeholder: "WOD" %>
+        <%= f.text_field :wodmode,   placeholder: "EMOMR / AMRAP / FT" %>
+        <div class="col-md-6"> <%= f.text_field :wodone,   placeholder: "Ejercicio #1" %> </div>
+        <div class="col-md-6"> <%= f.text_field :wodtwo, placeholder: "Ejercicio #2" %> </div>
+        <div class="col-md-6"> <%= f.text_field :wodthree,  placeholder: "Ejercicio #3" %> </div>
+        <div class="col-md-6"> <%= f.text_field :wodfour,  placeholder: "Ejercicio #4" %> </div>
+        <div class="col-md-6"> <%= f.text_field :wodfive,   placeholder: "Ejercicio #5" %> </div>
+        <div class="col-md-6"> <%= f.text_field :wodsix,   placeholder: "Ejercicio #6" %> </div>
+
+
+
+
+          <%= f.number_field :wday, placeholder: "# DEL DIA DE LA SEMANA"%>
+
+        <%= f.submit "Crear", class: "btn btn-default" %>
+        <% end %>
+      <% end %>
+    </div>
+    </div>

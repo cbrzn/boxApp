@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607203705) do
+ActiveRecord::Schema.define(version: 20170806083604) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -71,6 +71,37 @@ ActiveRecord::Schema.define(version: 20170607203705) do
     t.boolean  "activated",         default: true
     t.datetime "activated_at"
     t.index ["ci"], name: "index_users_on_ci", unique: true
+  end
+
+  create_table "wods", force: :cascade do |t|
+    t.text     "warmup"
+    t.text     "inbetween"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "wday"
+    t.text     "warmupone"
+    t.text     "warmuptwo"
+    t.text     "warumupthree"
+    t.text     "warmupfour"
+    t.text     "warmupfive"
+    t.text     "skillone"
+    t.text     "skilltwo"
+    t.text     "skillthree"
+    t.text     "skillfour"
+    t.text     "skillfive"
+    t.text     "skillsix"
+    t.text     "wodmode"
+    t.text     "wodone"
+    t.text     "wodtwo"
+    t.text     "wodthree"
+    t.text     "wodfour"
+    t.text     "wodfive"
+    t.text     "wodsix"
+    t.text     "warmupsix"
+    t.index ["user_id", "created_at"], name: "index_wods_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_wods_on_user_id"
   end
 
 end
