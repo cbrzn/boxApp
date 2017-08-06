@@ -23,5 +23,9 @@
 <% if current_user.admin? %>
 
 <center><%= link_to "Editar WOD", edit_wod_url(wod),
-    class: "btn btn-default" %></center>
+    class: "btn btn-default" %>
+      <%= link_to "Eliminar WOD", wod, method: :delete,
+          data: { confirm: "Seguro que deseas eliminar el WOD?" },
+          class: "btn btn-default" %>
+  </center>
 <% end %>

@@ -34,6 +34,9 @@ class WodsController < ApplicationController
   end
 
   def destroy
+    Wod.find(params[:id]).destroy
+    flash[:success] = "Wod eliminado"
+    redirect_to root_url
   end
 
 
