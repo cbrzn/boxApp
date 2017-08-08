@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806083604) do
+ActiveRecord::Schema.define(version: 20170808010401) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -100,6 +100,15 @@ ActiveRecord::Schema.define(version: 20170806083604) do
     t.text     "wodfive"
     t.text     "wodsix"
     t.text     "warmupsix"
+    t.text     "wodseven"
+    t.text     "wodeight"
+    t.text     "wodnine"
+    t.text     "wodten"
+    t.text     "wodeleven"
+    t.text     "wodtwelve"
+    t.text     "wodthirteen"
+    t.text     "wodfourteen"
+    t.text     "wodfifteen"
     t.index ["user_id", "created_at"], name: "index_wods_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_wods_on_user_id"
   end

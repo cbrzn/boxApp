@@ -48,6 +48,9 @@ class WodsController < ApplicationController
                                   :skillone, :skilltwo, :skillthree,
                                   :skillfour, :skillfive, :skillsix,
                                   :wodmode, :wodone, :wodtwo,
-                                  :wodthree, :wodfour, :wodfive, :wodsic)
+                                  :wodthree, :wodfour, :wodfive, :wodsix,
+                                  :wodseven, :wodeight, :wodnine, :wodten,
+                                  :wodeleven, :wodtwelve, :wodthirteen,
+                                  :wodfourteen, :wodfifteen)
     end
 end
