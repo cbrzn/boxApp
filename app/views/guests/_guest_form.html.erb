@@ -1,6 +1,6 @@
 <% unless current_user?(@user) %>
  <% if current_user.guests.none? %>
-<%= link_to "Invitar", new_training_guest_path(@training),
+<%= link_to "Invitar", new_box_training_guest_path(@training.box, @training),
  class: "btn btn-default" %>
   <% end %>
 <% end %>

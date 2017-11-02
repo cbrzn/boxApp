@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#home'
+  root 'boxes#index'
   get    '/signup',               to: 'users#new'
   get    '/contact',              to: 'static_pages#contact'
   get    '/about',                to: 'static_pages#about'
@@ -11,12 +11,14 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :wods                
   resources :users do
     resources :rms
   end
-  resources :trainings do
-    resources :guests
-    resources :bookings
+  resources :boxes do
+    resources :wods
+    resources :trainings do
+      resources :guests
+      resources :bookings
+    end
   end
 end

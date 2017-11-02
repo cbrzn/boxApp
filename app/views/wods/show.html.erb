@@ -1,0 +1,13 @@
+<% if logged_in? %>
+      <% if @wod.any? %>
+          <%= render wod %>
+        <% else %>
+        <h1> WOD </h1>
+        <h2> No hay wod para hoy </h2>
+        <% end %>
+      <% if current_user.admin? %>
+          <center>
+            <%= link_to "Crear WOD", new_box_wod_path, class: "btn btn-default" %>
+            <%= link_to "Todos los WOD", box_wods_path, class: "btn btn-default" %>
+          </center>
+      <% end %>

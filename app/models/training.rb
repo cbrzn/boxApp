@@ -2,6 +2,7 @@ class Training < ApplicationRecord
   has_many :users, through: :bookings
   has_many :bookings
   has_many :guests
+  belongs_to :box
 
   def can_book?
     bookings.count < cantidad

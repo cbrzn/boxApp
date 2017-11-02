@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :rms, dependent: :destroy
   has_many :guests, dependent: :destroy
   has_many :wods
+  belongs_to :box
   accepts_nested_attributes_for :guests
 
 
@@ -22,10 +23,6 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
 
-
-    def feed
-      Wod.this_day
-    end
 
 
     def already_booked

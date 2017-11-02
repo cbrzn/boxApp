@@ -1,0 +1,26 @@
+<% provide(:title, 'Box app') %>
+<h4>--------------</h4>
+<h4>--------------</h4>
+
+<% if logged_in? %>
+<center>
+<%= link_to image_tag("boxapp4.png", :size => "330x200", class:"img-responsive") %>
+</center>
+<h2> Donde deseas reservar? </h2>
+<class="boxes">
+  <% @box.each do |box| %>
+<h2>
+    <%= link_to box.name, box_path(box), class: "btn btn-sm btn-default" %>
+  </h2>
+  <% end %>
+</class>
+<% else %>
+
+<center>
+<%= link_to image_tag("boxapp4.png", :size => "330x200", class:"img-responsive") %>
+</center>
+<center>
+<%= link_to "Iniciar sesion", login_path, class: "btn btn-lg btn-primary" %>
+<%= link_to "Registrarse", signup_path, class: "btn btn-lg btn-default" %>
+</center>
+<% end %>

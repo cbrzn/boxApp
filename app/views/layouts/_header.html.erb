@@ -2,7 +2,7 @@
   <div class="container">
 
 
-    <%= link_to "Box app", root_path, id: "logo" %>
+    <%= link_to "BOX APP", root_path, id: "logo" %>
     <% if logged_in? %>
 
     <ul class="nav navbar-nav navbar-right">
@@ -11,11 +11,10 @@
   -haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
         </a>
         <ul class="dropdown-menu">
-        <li><%= link_to "WOD", root_path %></li>
-        <li><%= link_to "Reservar", trainings_path %></li>
         <% if current_user.admin? %>
         <li><%= link_to "Lista de usuarios", users_path %></li>
         <% end %>
+        <li><%= link_to "Todos los box", boxes_path %></li>
       <li class="divider"></li>
           <li><%= link_to "Perfil", current_user %></li>
           <li><%= link_to "RM", user_rms_path(current_user) %></li>

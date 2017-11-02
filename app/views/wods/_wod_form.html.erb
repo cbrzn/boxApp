@@ -1,7 +1,6 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-      <% if current_user.admin? %>
-      <%= form_for(@wod) do |f| %>
+      <%= form_for([@box, @wod]) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <%= f.text_field :warmup, placeholder: "WARM UP" %>
         <%= f.text_field :warmupone, placeholder: "EMOM / AMRAP / FT" %>
@@ -41,6 +40,5 @@
 
         <%= f.submit "Crear", class: "btn btn-default" %>
         <% end %>
-      <% end %>
     </div>
     </div>

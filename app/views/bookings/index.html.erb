@@ -14,9 +14,8 @@
     <li>
     <%=  p guest.name %>
     <% if current_user?(guest.user) %>
-    | <%= link_to "eliminar", training_guest_path(guest.training, guest), :method => :delete,
+    | <%= link_to "eliminar", box_training_guest_path(@box, guest.training, guest), :method => :delete,
                         data: { confirm: "Estas seguro?" } %>
-                            </span>
     </li>
     <% end %>
 <% end %>

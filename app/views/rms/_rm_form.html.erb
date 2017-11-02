@@ -1,23 +1,21 @@
-
-
   <div class="col-md-12 col-md-offset-3">
-<%= form_for([@user, @rm]) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.select :content, ['Back squat', 'Front squat', 'Deadlift',
-                          'Sumo Deadlift', 'Sumo Deadlift High Pull',
-                          'Squat Snatch',
-                          'Power Snatch', 'Power Clean',
-                          'Squat Clean', 'Muscle Snatch',
-                          'Thruster', 'Push Jerk',
-                          'Split Jerk', 'Press',
-                          'Push press', 'Cluster', 'Overhead Squat']%>
+    <%= form_for([@user, @rm]) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.select :content, ['Back squat', 'Front squat', 'Deadlift',
+                              'Sumo Deadlift', 'Sumo Deadlift High Pull',
+                              'Squat Snatch',
+                              'Power Snatch', 'Power Clean',
+                              'Squat Clean', 'Muscle Snatch',
+                              'Thruster', 'Push Jerk',
+                              'Split Jerk', 'Press',
+                              'Push press', 'Cluster', 'Overhead Squat']%>
 
 
 
-  <%= f.label :quantity, "Peso levantado" %>
-  <%= f.number_field :quantity %>
+      <%= f.label :quantity, "Peso levantado" %>
+      <%= f.number_field :quantity %>
 
-  <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
 
-  <%= f.submit "Crear", class: "btn btn-default" %>
-<% end %>
+      <%= f.submit "Crear", class: "btn btn-default" %>
+    <% end %>

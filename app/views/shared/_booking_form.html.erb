@@ -1,14 +1,14 @@
 <% unless current_user?(@user) %>
 <% if current_user.trainings.include?(@training) %>
   <%= link_to "Cancelar reserva",
-      training_booking_path(@training, @training.bookings.where(user:
+      box_training_booking_path(@training.box, @training, @training.bookings.where(user:
       current_user).first),
       method: :delete, data:{ confirm: 'Estas segur@ que deseas cancelar tu reserva?' },
       class: "btn btn-default" %>
   <% end %>
   <% if current_user.trainings.any? %>
     <% else %>
-      <%= link_to "Reservar", new_training_booking_path(@training,
+      <%= link_to "Reservar", new_box_training_booking_path(@training.box, @training,
       @training.bookings.where(user: current_user).first),
       class: "btn btn-default" %>
     <% end %>

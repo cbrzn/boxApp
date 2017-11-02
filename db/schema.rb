@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808010401) do
+ActiveRecord::Schema.define(version: 20171102151030) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20170808010401) do
     t.index ["deleted_at"], name: "index_bookings_on_deleted_at", where: "deleted_at IS NULL"
     t.index ["training_id"], name: "index_bookings_on_training_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "boxes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "guests", force: :cascade do |t|
@@ -53,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170808010401) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "guestslot"
+    t.integer  "box_id"
+    t.index ["box_id"], name: "index_trainings_on_box_id"
     t.index ["hora"], name: "index_trainings_on_hora"
   end
 
@@ -70,6 +78,8 @@ ActiveRecord::Schema.define(version: 20170808010401) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: true
     t.datetime "activated_at"
+    t.integer  "box_id"
+    t.index ["box_id"], name: "index_users_on_box_id"
     t.index ["ci"], name: "index_users_on_ci", unique: true
   end
 
@@ -109,6 +119,8 @@ ActiveRecord::Schema.define(version: 20170808010401) do
     t.text     "wodthirteen"
     t.text     "wodfourteen"
     t.text     "wodfifteen"
+    t.integer  "box_id"
+    t.index ["box_id"], name: "index_wods_on_box_id"
     t.index ["user_id", "created_at"], name: "index_wods_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_wods_on_user_id"
   end
