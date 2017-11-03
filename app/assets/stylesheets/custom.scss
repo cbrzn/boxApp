@@ -11,6 +11,8 @@ $btn-primary-border: #000000;
 $btn-default-border: #FFFFFF;
 @import "bootstrap";
 
+
+
 /* Users index */
 
 .users {
@@ -121,6 +123,7 @@ h3 {
 h4 {
   color: #8A8A8D;
 }
+
 /* header */
 
 #logo {
@@ -158,21 +161,5 @@ footer a:hover {
 
 footer small {
   float: left;
-
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-small {
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
-  list-style: none;
 
 }

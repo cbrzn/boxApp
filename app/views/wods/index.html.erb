@@ -35,4 +35,14 @@
 <center><%= wod.wodthirteen %></center>
 <center><%= wod.wodfourteen %></center>
 <center><%= wod.wodfifteen %></center>
+<% if current_user.admin? %>
+
+<center><%= link_to "Editar WOD", edit_box_wod_path(wod.box, wod),
+    class: "btn btn-default" %>
+      <%= link_to "Eliminar WOD", box_wod_path(wod.box, wod), method: :delete,
+          data: { confirm: "Seguro que deseas eliminar el WOD?" },
+          class: "btn btn-default" %>
+  </center>
+<% end %>
+
 <% end %>

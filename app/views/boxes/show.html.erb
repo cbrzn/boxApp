@@ -4,8 +4,26 @@
 <h1>
   <%= @box.name %>
 </h1>
+
 <div class="row">
   <div class="col-md-4">
+
+          <% if @box.wods.this_day.any? %>
+          <class="wods">
+            <h2> WOD DEL DIA</h2>
+            <%= render @wods.this_day %>
+          <% else %>
+            <h3> WOD </h3>
+            <h2> No hay wod hoy </h2>
+            <% if current_user.admin? %>
+
+            <%= link_to "Crear WOD", new_box_wod_path(@box.id), class: "btn btn-default" %>
+            <%= link_to "Todos los WOD", box_wods_path(@box.id), class: "btn btn-default" %>
+            <% end %>
+            <% end %>
+
+  </div>
+  <div class="col-md-8">
     <h2> HORAS DE ENTRENAMIENTO </h2>
         <% @trainings.each do |training| %>
           <center><%= link_to training.hora, box_training_path(training.box, training),
@@ -15,18 +33,5 @@
         <% end %>
   </div>
 
-  <div class="col-md-8">
-        <center>
-          <% if @box.wods.this_day.any? %>
-          <class="wods">
-            <h2> WOD DEL DIA</h2>
-            <%= render @wods.this_day %>
-          <% else %>
-            <h3> WOD </h3>
-            <h2> No hay wod hoy </h2>
-            <%= link_to "Crear WOD", new_box_wod_path(@box.id), class: "btn btn-default" %>
-            <%= link_to "Todos los WOD", box_wods_path(@box.id), class: "btn btn-default" %>
-          <% end %>
-        </center>
-  </div>
+
 </div>
